@@ -1,5 +1,5 @@
 <h1 align="center">
-    MultiColor
+    MultiColorize
     <br>
 </h1>
 
@@ -8,9 +8,17 @@
     <br>
 </h3>
 
-- Introduction
-- Project Goal
-- Methods
-- Experiments and Results
-- Conclusions
-- How to Run
+## Contents
+
+- [Introduction](#introduction)
+- [Project Goal](#project-goal)
+- [How to Run](#how-to-run)
+  - [Prerequisites](#prerequisites)
+
+## Introduction
+
+## Project Goal
+
+## How to Run
+
+# Prerequisites
