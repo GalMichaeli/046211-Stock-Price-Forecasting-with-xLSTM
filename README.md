@@ -8,18 +8,40 @@
     <br>
 </h3>
 
+<h3 align="center">
+    <a href="https://github.com/GalMichaeli">Gal Michaeli</a> •
+    <a href="https://github.com/SergeyMashkin">Sergey Mashkin</a>
+</h3>
+
+<h4 align="center">046211 Technion ECE Spring 2024 Final Project</h4>
+
 ## Contents
 
-- [Introduction](#introduction)
-- [Project Goal](#project-goal)
-- [Experiments and Results](#)
 - [Prerequisites](#prerequisites)
 - [How to Run](#how-to-run)
-
-## Introduction
-
-## Project Goal
+- [Datasets](#datasets)
+- [Repository Organization](#repository-orgnization)
+- [Refernces](#refernces)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 ## Prerequisites
 
+| Library  | Version     |
+| -------- | ----------- |
+| `Python` | `3.11`      |
+| `torch`  | > = `1.7.1` |
+
 ## How to Run
+
+## Datasets
+
+## Repository Orgnization
+
+## Refernces
+
+## Acknowledgements
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
