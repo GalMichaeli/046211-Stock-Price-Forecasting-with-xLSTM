@@ -16,7 +16,7 @@
 
 <h4 align="center">Technion ECE 046211 Spring 2024 Final Project</h4>
 
-## Introduction
+## Overview
 This project aims to utilize the [xLSTM](https://arxiv.org/abs/2405.04517) 
 block architecture for short, medium and long timeframe prediction of stock 
 prices. xLSTM blocks, and in particular mLSTM blocks, boast improvements over 
