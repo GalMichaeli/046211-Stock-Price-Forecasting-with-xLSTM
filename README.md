@@ -36,7 +36,7 @@ modifications and adaptations.
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
-## Previous Work
+## Previous and Related Work
 1. Official xLSTM implementation
    - https://github.com/NX-AI/xlstm/tree/main
 2. Official xLSTMTime implementation
@@ -64,7 +64,7 @@ modifications and adaptations.
 
 ## Repository Orgnization
 
-## Refernces
+## References
 
 ## Acknowledgements
 
