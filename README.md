@@ -27,7 +27,7 @@ distributions. We based our design on [xLSTMTime](https://arxiv.org/pdf/2407.102
 modifications and adaptations.
 
 ## Contents
-- [Previous Work](#previous-work)
+- [Previous and Related Work](#previous-and-related-work)
 - [Dependencies](#dependencies)
 - [How to Run](#how-to-run)
 - [Datasets](#datasets)
