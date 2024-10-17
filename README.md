@@ -17,7 +17,14 @@
 <h4 align="center">Technion ECE 046211 Spring 2024 Final Project</h4>
 
 ## Introduction
-This project aims to utilize the [xLSTM](https://arxiv.org/abs/2405.04517) block architecture for short, medium and long timeframe prediction of stock prices. xLSTM blocks, and in particular mLSTM blocks, boast improvements over traditional LSTM blocks and Transformer capabilities, mainly due to their matrix memory and covariance update rule. To take full advantage of these improved capabilities, we constructed a model specifically designed for prediction of time series with non-stationary distribution. We based our design on [xLSTMTime](https://arxiv.org/pdf/2407.10240), with some modifications and adaptations.
+This project aims to utilize the [xLSTM](https://arxiv.org/abs/2405.04517) 
+block architecture for short, medium and long timeframe prediction of stock 
+prices. xLSTM blocks, and in particular mLSTM blocks, boast improvements over 
+traditional LSTM blocks and Transformer capabilities, mainly due to their matrix 
+memory and covariance update rule. To take full advantage of these improved capabilities, 
+we constructed a model specifically designed for prediction of time series with non-stationary 
+distribution. We based our design on [xLSTMTime](https://arxiv.org/pdf/2407.10240), with some 
+modifications and adaptations.
 
 ## Contents
 - [Previous Work](#previous-work)
@@ -25,7 +32,7 @@ This project aims to utilize the [xLSTM](https://arxiv.org/abs/2405.04517) block
 - [How to Run](#how-to-run)
 - [Datasets](#datasets)
 - [Repository Organization](#repository-orgnization)
-- [Refernces](#refernces)
+- [References](#references)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
