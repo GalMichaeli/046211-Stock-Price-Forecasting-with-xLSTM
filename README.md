@@ -1,5 +1,5 @@
 <h1 align="center">
-    MultiColorize
+    Stock Price Prediction Using xLSTM
     <br>
 </h1>
 
