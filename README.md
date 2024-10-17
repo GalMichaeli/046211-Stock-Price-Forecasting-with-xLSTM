@@ -23,7 +23,7 @@ prices. xLSTM blocks, and in particular mLSTM blocks, boast improvements over
 traditional LSTM blocks and Transformer capabilities, mainly due to their matrix 
 memory and covariance update rule. To take full advantage of these improved capabilities, 
 we constructed a model specifically designed for prediction of time series with non-stationary 
-distribution. We based our design on [xLSTMTime](https://arxiv.org/pdf/2407.10240), with some 
+distributions. We based our design on [xLSTMTime](https://arxiv.org/pdf/2407.10240), with some 
 modifications and adaptations.
 
 ## Contents
