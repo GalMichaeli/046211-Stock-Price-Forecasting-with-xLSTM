@@ -4,7 +4,7 @@
 </h1>
 
 <h3 align="center">
-    Image Colorization with Multiple Color Options for Polychromatic Objects
+    Harnessing the power of the xLSTM architecture for time series prediction
     <br>
 </h3>
 
