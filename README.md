@@ -30,7 +30,7 @@ modifications and adaptations.
 - [Previous and Related Work](#previous-and-related-work)
 - [Dependencies](#dependencies)
 - [How to Run](#how-to-run)
-- [Datasets](#datasets)
+- [Data Acquisition and Preprocessing](#data-acquisition-and-preprocessing)
 - [Repository Organization](#repository-orgnization)
 - [References](#references)
 - [Acknowledgements](#acknowledgements)
@@ -50,17 +50,25 @@ modifications and adaptations.
 | -------- | ------- |
 | `Python` | `3.10.12` |
 | `torch`  | `2.4.1` |
+| `torch-summary` | `1.4.5` |
+| `xlstm`    | `1.0.7`  |
 | `cuda` | `12.1` |
 | `matplotlib` | `3.7.1` |
 | `numpy` | `1.26.4` |
 | `pandas` | `2.2.2` |
 | `scikit-learn` | `1.5.2` |
 | `yfinance` | `0.2.44` |
+| `Ninja`    | `1.11.1.1` |
 
 
 ## How to Run
+Download the notebook and run in Google Colaboratory.
 
-## Datasets
+## Data Acquisition and Preprocessing
+For better comparison to similar previous projects, the model was trained on the Coca-Cola daily data, obtained through ``` yfinance ``` API.
+using the following features: Open, High, Low, Close and Adjusted Close prices, and the daily Volume.
+Data preprocessing included applying a simple moving average with window of length 10 and transforming the prices to their natural logarithm.
+Due to the length of the time series, we opted to assign only 64% to training, 16% to validation and the remaining 20% to testing.
 
 ## Repository Orgnization
 
