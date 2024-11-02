@@ -32,6 +32,7 @@ modifications and adaptations.
 - [How to Run](#how-to-run)
 - [Data Acquisition and Preprocessing](#data-acquisition-and-preprocessing)
 - [Model Architecture](#model-architecture)
+- [Results](#results)
 - [Repository Organization](#repository-orgnization)
 - [References](#references)
 - [Acknowledgements](#acknowledgements)
@@ -74,6 +75,11 @@ Due to the length of the time series, we opted to assign only 64% to training, 1
 ## Model Architecture
 As recommended by [xLSTMTime](https://arxiv.org/pdf/2407.10240), the architecture we used is as depicted in the
 following figure.
+<p align="center">
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/model-arch.png" width="1000"/>
+</p>
+
+## Results
 
 
 ## Repository Orgnization
