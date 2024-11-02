@@ -1,11 +1,11 @@
 <h1 align="center">
-    Stock Price Prediction Using xLSTM
+    Stock Price Forecasting Using xLSTM
     <br>
 </h1>
 
 
 <h3 align="center">
-    Harnessing the Power of xLSTM for Time Series Prediction
+    Harnessing the Power of xLSTM for Time Series Forecasting
     <br>
 </h3>
 
