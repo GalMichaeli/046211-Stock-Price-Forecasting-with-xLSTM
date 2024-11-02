@@ -18,8 +18,8 @@
 
 ## Overview
 This project aims to utilize the [xLSTM](https://arxiv.org/abs/2405.04517) 
-block architecture for short, medium and long timeframe prediction of stock 
-prices. xLSTM blocks, and in particular mLSTM blocks, boast improvements over 
+block architecture for prediction of stock prices.
+xLSTM blocks, and in particular mLSTM blocks, boast improvements over 
 traditional LSTM blocks and Transformer capabilities, mainly due to their matrix 
 memory and covariance update rule. To take full advantage of these improved capabilities, 
 we constructed a model specifically designed for prediction of time series with non-stationary 
@@ -36,6 +36,7 @@ modifications and adaptations.
 - [Repository Organization](#repository-orgnization)
 - [References](#references)
 - [Acknowledgements](#acknowledgements)
+- [Disclaimer](#disclaimer)
 - [License](#license)
 
 ## Previous and Related Work
@@ -69,7 +70,7 @@ Download the notebook and run in Google Colaboratory.
 ## Data Acquisition and Preprocessing
 For better comparison to similar previous projects, the model was trained on the Coca-Cola daily data, obtained through ``` yfinance ``` API.
 using the following features: Open, High, Low, Close and Adjusted Close prices, and the daily Volume.
-Data preprocessing included applying a simple moving average with window of length 10 and transforming the prices to their natural logarithm.
+Data preprocessing included applying a simple moving average with window of length 5 and transforming the prices to their natural logarithm.
 Due to the length of the time series, we opted to assign only 64% to training, 16% to validation and the remaining 20% to testing.
 
 ## Model Architecture
@@ -80,13 +81,39 @@ following figure.
 </p>
 
 ## Results
+When viewing the forecast against the ground truth prices for the whole duration of the time series, as shown in the following figure, the model's prediction capabilities are quite impressive:
+<p align="center">
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/all-sets-perf.png"/>
+</p>
 
+A closer look into the performance over the **test set** reveals the deviations and inaccuracies of the prediction:
+<p align="center">
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/test-set-perf.png"/>
+</p>
 
+Taking the *Coca-Cola*-trained model and forecasting prices of other stocks from different market sectors
+yield impressive results as well.
+On Amazon stock:
+<p align="center">
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/comp-amazon-perf.png"/>
+</p>
+
+And on Pfizer stock:
+<p align="center">
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/comp-pfizer-perf.png"/>
+</p>
+
+Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
+resulting in non-satisfactory performance:
+<video src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/autoregressive-100-days" width="300" />
 ## Repository Orgnization
 
 ## References
 
 ## Acknowledgements
+
+## Disclaimer
+This project is not intended to provide financial, trading, and investment advice. No warranties are made regarding the accuracy of the models. Audiences should conduct their due diligence before making any investment decisions using the methods or code presented in this repository.
 
 ## License
 
