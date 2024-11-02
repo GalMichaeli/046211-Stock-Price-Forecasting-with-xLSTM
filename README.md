@@ -33,7 +33,7 @@ modifications and adaptations.
 - [Data Acquisition and Preprocessing](#data-acquisition-and-preprocessing)
 - [Model Architecture](#model-architecture)
 - [Results](#results)
-- [Repository Organization](#repository-orgnization)
+- [Repository Organization](#repository-organization)
 - [References](#references)
 - [Acknowledgements](#acknowledgements)
 - [Disclaimer](#disclaimer)
@@ -92,22 +92,30 @@ A closer look into the performance over the **test set** reveals the deviations 
 </p>
 
 Taking the *Coca-Cola*-trained model and forecasting prices of other stocks from different market sectors
-yield impressive results as well.
+yields impressive results as well.
+
 On Amazon stock:
 <p align="center">
   <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/comp-amazon-perf.png"/>
 </p>
 
-And on Pfizer stock:
+On Pfizer stock:
 <p align="center">
   <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/comp-pfizer-perf.png"/>
 </p>
 
 Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
 resulting in non-satisfactory performance:
+
 https://github.com/user-attachments/assets/2794c818-4282-4cd1-8a51-7b60f31180e6
 
-## Repository Orgnization
+## Repository Organization
+| Directory | Description |
+|-----------|-------------|
+| code | Contains .ipynb files used for our model and for producing RWKV data for comparison |
+| data | Contains .csv files with data produced by the RWKV model |
+| assets | Contains the images displayed in `README.md` |
+
 
 ## References
 
