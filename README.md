@@ -31,6 +31,7 @@ modifications and adaptations.
 - [Dependencies](#dependencies)
 - [How to Run](#how-to-run)
 - [Data Acquisition and Preprocessing](#data-acquisition-and-preprocessing)
+- [Model Architecture](#model-architecture)
 - [Repository Organization](#repository-orgnization)
 - [References](#references)
 - [Acknowledgements](#acknowledgements)
@@ -69,6 +70,11 @@ For better comparison to similar previous projects, the model was trained on the
 using the following features: Open, High, Low, Close and Adjusted Close prices, and the daily Volume.
 Data preprocessing included applying a simple moving average with window of length 10 and transforming the prices to their natural logarithm.
 Due to the length of the time series, we opted to assign only 64% to training, 16% to validation and the remaining 20% to testing.
+
+## Model Architecture
+As recommended by [xLSTMTime](https://arxiv.org/pdf/2407.10240), the architecture we used is as depicted in the
+following figure.
+
 
 ## Repository Orgnization
 
