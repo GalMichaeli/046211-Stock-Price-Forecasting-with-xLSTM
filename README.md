@@ -105,7 +105,7 @@ And on Pfizer stock:
 
 Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
 resulting in non-satisfactory performance:
-<video src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/autoregressive-100-days" width="300" />
+<video src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/autoregressive-100-days.mp4" width="300" />
 ## Repository Orgnization
 
 ## References
