@@ -77,35 +77,35 @@ Due to the length of the time series, we opted to assign only 64% to training, 1
 As recommended by [xLSTMTime](https://arxiv.org/pdf/2407.10240), the architecture we used is as depicted in the
 following figure.
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/model-arch.png" width="1000"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/model-arch.png" width="1000"/>
 </p>
 
 ## Results
 When viewing the forecast against the ground truth prices for the whole duration of the time series, as shown in the following figure, the model's prediction capabilities are quite impressive:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/all-sets-perf.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/all-sets-perf.png"/>
 </p>
 
 A closer look into the performance over the **test set** reveals the deviations and inaccuracies of the prediction:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/test-set-perf.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/test-set-perf.png"/>
 </p>
 
 Taking the *Coca-Cola*-trained model and forecasting prices of other stocks from different market sectors
 yield impressive results as well.
 On Amazon stock:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/comp-amazon-perf.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/comp-amazon-perf.png"/>
 </p>
 
 And on Pfizer stock:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/comp-pfizer-perf.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/comp-pfizer-perf.png"/>
 </p>
 
 Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
 resulting in non-satisfactory performance:
-<video src="https://github.com/GalMichaeli/046211-Stock-Price-Prediction-with-xLSTM/blob/main/assets/autoregressive-100-days.mp4" width="300" />
+<video src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/autoregressive-100-days.mp4" width="300" />
 ## Repository Orgnization
 
 ## References
