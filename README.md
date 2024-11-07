@@ -47,8 +47,19 @@ modifications and adaptations.
 3. Stock price prediction using RWKV
    - https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main
 
-## Dependencies
+## Configuration and Hyperparameters Used
+| Library  | Version |
+| -------- | ------- |
+| `Batch Size` | `64` |
+| `Epochs`  | `50` |
+| `Init. Learning Rate` | `1e-4` |
+| `Train-Val-Test Split`    | `64% - 16% - 20%`  |
+| `Scaler` | `MinMaxScaler` |
 
+## How to Run
+Download the notebook and run in Google Colaboratory.
+
+## Dependencies
 | Library  | Version |
 | -------- | ------- |
 | `Python` | `3.10.12` |
@@ -63,9 +74,6 @@ modifications and adaptations.
 | `yfinance` | `0.2.44` |
 | `Ninja`    | `1.11.1.1` |
 
-
-## How to Run
-Download the notebook and run in Google Colaboratory.
 
 ## Data Acquisition and Preprocessing
 For better comparison to similar previous projects, the model was trained on the Coca-Cola daily data, obtained through ``` yfinance ``` API
@@ -104,7 +112,7 @@ On Pfizer stock:
   <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/zoom_PFE.png"/>
 </p>
 
-Performance comparssion with RWKV:
+## Performance comparssion with RWKV:
 We took existed [RWKV](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main) model, which is based on transformers and is considered superior to traditional LSTM models. We re-trained RWKV model on the same stock and compared it with xLSTM model.
 
 On Coca-Cola stock:
@@ -122,6 +130,7 @@ On Pfizer stock:
   <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/compare_PFE.png"/>
 </p>
 
+Our results indicate that the xLSTM model outperforms the RWKV model, particularly in responding to sudden fluctuations in stock prices.
 
 Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
 resulting in non-satisfactory performance:
