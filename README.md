@@ -47,18 +47,6 @@ modifications and adaptations.
 3. Stock price prediction using RWKV
    - https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main
 
-## Configuration and Hyperparameters Used
-| Library  | Version |
-| -------- | ------- |
-| `Batch Size` | `64` |
-| `Epochs`  | `50` |
-| `Init. Learning Rate` | `1e-4` |
-| `Train-Val-Test Split`    | `64% - 16% - 20%`  |
-| `Scaler` | `MinMaxScaler` |
-
-## How to Run
-Download the notebook and run in Google Colaboratory.
-
 ## Dependencies
 | Library  | Version |
 | -------- | ------- |
@@ -74,6 +62,19 @@ Download the notebook and run in Google Colaboratory.
 | `yfinance` | `0.2.44` |
 | `Ninja`    | `1.11.1.1` |
 
+## How to Run
+Download the notebook and run in Google Colaboratory.
+
+## Architecture TODO
+
+## Configuration and Hyperparameters Used
+| Library  | Version |
+| -------- | ------- |
+| `Batch Size` | `64` |
+| `Epochs`  | `50` |
+| `Init. Learning Rate` | `1e-4` |
+| `Train-Val-Test Split`    | `64% - 16% - 20%`  |
+| `Scaler` | `MinMaxScaler` |
 
 ## Data Acquisition and Preprocessing
 For better comparison to similar previous projects, the model was trained on the Coca-Cola daily data, obtained through ``` yfinance ``` API
@@ -112,6 +113,11 @@ On Pfizer stock:
   <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/zoom_PFE.png"/>
 </p>
 
+Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
+resulting in non-satisfactory performance:
+
+https://github.com/user-attachments/assets/2794c818-4282-4cd1-8a51-7b60f31180e6
+
 ## Performance comparssion with RWKV:
 We took existed [RWKV](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main) model, which is based on transformers and is considered superior to traditional LSTM models. We re-trained RWKV model on the same stock and compared it with xLSTM model.
 
@@ -132,11 +138,6 @@ On Pfizer stock:
 
 Our results indicate that the xLSTM model outperforms the RWKV model, particularly in responding to sudden fluctuations in stock prices.
 
-Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
-resulting in non-satisfactory performance:
-
-https://github.com/user-attachments/assets/2794c818-4282-4cd1-8a51-7b60f31180e6
-
 ## Repository Organization
 | Directory | Description |
 |-----------|-------------|
@@ -144,10 +145,17 @@ https://github.com/user-attachments/assets/2794c818-4282-4cd1-8a51-7b60f31180e6
 | data | Contains .csv files with data produced by the RWKV model |
 | assets | Contains the images displayed in `README.md` |
 
+## Usage TODO
 
 ## References
-
+RWKV model: https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main
+xLSTMTime documentation: https://arxiv.org/abs/2405.04517
+xLSTMTime Git: https://github.com/muslehal/xLSTMTime
 ## Acknowledgements
+
+
+## Future Work TODO
+
 
 ## Disclaimer
 This project is not intended to provide financial, trading, and investment advice. No warranties are made regarding the accuracy of the models. Audiences should conduct their due diligence before making any investment decisions using the methods or code presented in this repository.
