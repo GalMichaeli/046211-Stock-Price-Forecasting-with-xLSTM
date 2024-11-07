@@ -116,7 +116,7 @@ On Pfizer stock:
 Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
 resulting in non-satisfactory performance:
 
-https://github.com/user-attachments/assets/2794c818-4282-4cd1-8a51-7b60f31180e6
+https://github.com/user-attachments/assets/9b365589-fe91-4cc0-b0a4-efb39a64f50e
 
 ## Performance comparssion with RWKV:
 We took existed [RWKV](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main) model, which is based on transformers and is considered superior to traditional LSTM models. We re-trained RWKV model on the same stock and compared it with xLSTM model.
