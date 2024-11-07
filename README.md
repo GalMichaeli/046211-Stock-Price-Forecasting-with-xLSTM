@@ -68,7 +68,7 @@ modifications and adaptations.
 Download the notebook and run in Google Colaboratory.
 
 ## Data Acquisition and Preprocessing
-For better comparison to similar previous projects, the model was trained on the Coca-Cola daily data, obtained through ``` yfinance ``` API.
+For better comparison to similar previous projects, the model was trained on the Coca-Cola daily data, obtained through ``` yfinance ``` API
 using the following features: Open, High, Low, Close and Adjusted Close prices, and the daily Volume.
 Data preprocessing included applying a simple moving average with window of length 5 and transforming the prices to their natural logarithm.
 Due to the length of the time series, we opted to assign only 64% to training, 16% to validation and the remaining 20% to testing.
@@ -83,12 +83,12 @@ following figure.
 ## Results
 When viewing the forecast against the ground truth prices for the whole duration of the time series, as shown in the following figure, the model's prediction capabilities are quite impressive:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/all-sets-perf.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/general_KO.png"/>
 </p>
 
 A closer look into the performance over the **test set** reveals the deviations and inaccuracies of the prediction:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/test-set-perf.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/zoom_KO.png"/>
 </p>
 
 Taking the *Coca-Cola*-trained model and forecasting prices of other stocks from different market sectors
@@ -96,13 +96,16 @@ yields impressive results as well.
 
 On Amazon stock:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/comp-amazon-perf.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/zoom_AMZN.png"/>
 </p>
 
 On Pfizer stock:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/comp-pfizer-perf.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/zoom_PFE.png"/>
 </p>
+
+Performance comparssion with RWKV :
+We took existed [RWKV](https://arxiv.org/pdf/2407.10240](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main) model
 
 Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
 resulting in non-satisfactory performance:
