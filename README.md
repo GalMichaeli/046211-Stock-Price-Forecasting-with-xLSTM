@@ -105,7 +105,7 @@ On Pfizer stock:
 </p>
 
 Performance comparssion with RWKV :
-We took existed [RWKV]([https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main])  model
+We took existed [RWKV](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main)  model
 
 Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
 resulting in non-satisfactory performance:
