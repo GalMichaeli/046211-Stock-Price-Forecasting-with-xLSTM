@@ -65,16 +65,21 @@ modifications and adaptations.
 ## How to Run
 Download the notebook and run in Google Colaboratory.
 
-## Architecture TODO
-
 ## Configuration and Hyperparameters Used
 | Library  | Version |
 | -------- | ------- |
 | `Batch Size` | `64` |
 | `Epochs`  | `50` |
+| `Learning Rate Schedule` | `ReduceLROnPlateau` |
 | `Init. Learning Rate` | `1e-4` |
 | `Train-Val-Test Split`    | `64% - 16% - 20%`  |
 | `Scaler` | `MinMaxScaler` |
+| `Number of mLSTM blocks` | `3` |
+| `Embedding dimension` | `128` |
+| `Moving average kernel size` | `25` |
+| `Loss Function` | `MSE loss` |
+| `Optimization Algorithm` | `RAdam` |
+The batch size, learning rate and scheduler hyperparameters were optimized with Optuna.
 
 ## Data Acquisition and Preprocessing
 For better comparison to similar previous projects, the model was trained on the Coca-Cola daily data, obtained through ``` yfinance ``` API
@@ -138,6 +143,9 @@ On Pfizer stock:
 
 Our results indicate that the xLSTM model outperforms the RWKV model, particularly in responding to sudden fluctuations in stock prices.
 
+## Summary & Conclusions:
+Our xLSTM model demonstrates impressive forecasting accuracy over short time periods across various types of stocks, outperforming the transformer-based RWKV model. However, the efficiency and accuracy of predictions decline as the forecast horizon extends, with performance decreasing significantly for longer-term forecasts.
+
 ## Repository Organization
 | Directory | Description |
 |-----------|-------------|
@@ -145,17 +153,16 @@ Our results indicate that the xLSTM model outperforms the RWKV model, particular
 | data | Contains .csv files with data produced by the RWKV model |
 | assets | Contains the images displayed in `README.md` |
 
-## Usage TODO
-
-## References
+## Sources & References:
 RWKV model: https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main
 xLSTMTime documentation: https://arxiv.org/abs/2405.04517
 xLSTMTime Git: https://github.com/muslehal/xLSTMTime
-## Acknowledgements
 
-
-## Future Work TODO
-
+## Future Work 
+Based on our results, we believe our project demonstrates promising potential in stock prediction and contributes to advancing research on LSTM-based models. However, the forecasting accuracy over longer periods remains suboptimal, highlighting areas for improvement. Future work could involve:
+* Experimenting with different model configurations, including varying the number of xLSTM blocks.
+* Integrating sLSTM blocks with different head configurations.
+* Exploring alternative data preprocessing techniques, such as various feature scaling methods, outlier handling strategies, and categorical encoding for supplementary stock data.
 
 ## Disclaimer
 This project is not intended to provide financial, trading, and investment advice. No warranties are made regarding the accuracy of the models. Audiences should conduct their due diligence before making any investment decisions using the methods or code presented in this repository.
