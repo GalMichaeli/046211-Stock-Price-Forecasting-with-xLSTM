@@ -3,7 +3,6 @@
     <br>
 </h1>
 
-
 <h3 align="center">
     Harnessing the Power of xLSTM for Time Series Forecasting
     <br>
@@ -16,6 +15,7 @@
 
 <h4 align="center">Technion ECE 046211 Spring 2024 Final Project</h4>
 
+
 ## Overview
 This project aims to utilize the [xLSTM](https://arxiv.org/abs/2405.04517) 
 block architecture for prediction of stock prices.
@@ -26,18 +26,19 @@ we constructed a model specifically designed for prediction of time series with 
 distributions. We based our design on [xLSTMTime](https://arxiv.org/pdf/2407.10240), with some 
 modifications and adaptations.
 
+
 ## Contents
 - [Previous and Related Work](#previous-and-related-work)
 - [Dependencies](#dependencies)
-- [How to Run](#how-to-run)
+- [Usage](#usage)
+- [Configuration and Hyperparameters](#configuration-and-hyperparameters)
 - [Data Acquisition and Preprocessing](#data-acquisition-and-preprocessing)
 - [Model Architecture](#model-architecture)
 - [Results](#results)
 - [Repository Organization](#repository-organization)
-- [References](#references)
-- [Acknowledgements](#acknowledgements)
 - [Disclaimer](#disclaimer)
 - [License](#license)
+
 
 ## Previous and Related Work
 1. Official xLSTM implementation
@@ -46,6 +47,7 @@ modifications and adaptations.
    - https://github.com/muslehal/xLSTMTime/tree/main
 3. Stock price prediction using RWKV
    - https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main
+
 
 ## Dependencies
 | Library  | Version |
@@ -62,10 +64,45 @@ modifications and adaptations.
 | `yfinance` | `0.2.44` |
 | `Ninja`    | `1.11.1.1` |
 
-## How to Run
-Download the notebook and run in Google Colaboratory.
 
-## Configuration and Hyperparameters Used
+## Usage
+Download the notebook and run in Google Colaboratory.
+To train and forecast a stock of your choice, say comapny *ExWhyZee* with ticker *XYZ*,
+run all cells in the notebook upto (exclusive) the section named "Forecasting Coca-Cola",
+then do the following.
+
+Instantiate the model:
+``` 
+XYZ_trainer = trainer('ExWhyZee', 'XYZ')
+``` 
+
+Train the model:
+```
+XYZ_trainer.train()
+```
+
+View a plot of the training and validation losses over training epochs:
+```
+XYZ_trainer.plot_losses()
+```
+
+View the model's forecast on the test set:
+```
+XYZ_trainer.plot_set('test')
+```
+
+Or view the model's forecast on the entrie data series:
+```
+XYZ_trainer.plot_set('all')
+```
+**Note**: Currently 'test' and 'all' are the only supported plotting formats.
+
+You can modify the training hyperparamters to your liking in ```config_dict["training"]```.
+
+**Note**: Modifying other values in ``` config_dict ``` may produce unexpected results or errors.
+
+
+## Configuration and Hyperparameters
 | Library  | Version |
 | -------- | ------- |
 | `Batch Size` | `64` |
@@ -79,13 +116,16 @@ Download the notebook and run in Google Colaboratory.
 | `Moving average kernel size` | `25` |
 | `Loss Function` | `MSE loss` |
 | `Optimization Algorithm` | `RAdam` |
+
 The batch size, learning rate and scheduler hyperparameters were optimized with Optuna.
 
+
 ## Data Acquisition and Preprocessing
-For better comparison to similar previous projects, the model was trained on the Coca-Cola daily data, obtained through ``` yfinance ``` API
-using the following features: Open, High, Low, Close and Adjusted Close prices, and the daily Volume.
-Data preprocessing included applying a simple moving average with window of length 5 and transforming the prices to their natural logarithm.
+For better comparison to similar previous projects, the model was trained and tested on the Coca-Cola, Pfizer and Amazon daily data, obtained through the ``` yfinance ``` API
+Python library ```yfinance```. Data features used were: Open, High, Low, Close and Adjusted Close prices, and the daily Volume.
+Data preprocessing included applying a simple moving average with window size 10, and transforming the **prices** to their natural logarithm.
 Due to the length of the time series, we opted to assign only 64% to training, 16% to validation and the remaining 20% to testing.
+
 
 ## Model Architecture
 As recommended by [xLSTMTime](https://arxiv.org/pdf/2407.10240), the architecture we used is as depicted in the
@@ -94,69 +134,46 @@ following figure.
   <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/model-arch.png" width="1000"/>
 </p>
 
+
 ## Results
-When viewing the forecast against the ground truth prices for the whole duration of the time series, as shown in the following figure, the model's prediction capabilities are quite impressive:
+The model's prediction capabilities on the whole time series can be seen in the following figure, which shows the performance on *Coca-Cola* stock data:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/general_KO.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/ko-all.png"/>
 </p>
 
 A closer look into the performance over the **test set** reveals the deviations and inaccuracies of the prediction:
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/zoom_KO.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/ko-test.png"/>
 </p>
 
-Taking the *Coca-Cola*-trained model and forecasting prices of other stocks from different market sectors
-yields impressive results as well.
-
-On Amazon stock:
-<p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/zoom_AMZN.png"/>
-</p>
-
-On Pfizer stock:
-<p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/zoom_PFE.png"/>
-</p>
-
-Lastly, we experimented with autoregressively forecasting the *Coca-Cola* price 100 days into the future,
+Additionaly, we experimented with autoregressive forecasting 100 days into the future on *Coca-Cola* data,
 resulting in non-satisfactory performance:
 
 https://github.com/user-attachments/assets/9b365589-fe91-4cc0-b0a4-efb39a64f50e
 
-## Performance comparssion with RWKV:
-We took existed [RWKV](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main) model, which is based on transformers and is considered superior to traditional LSTM models. We re-trained RWKV model on the same stock and compared it with xLSTM model.
 
-On Coca-Cola stock:
+## Comparison with RWKV:
+We examined our model's performance against an [RWKV](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main) model
+(considered to be superior to traditional LSTM models). The Comparison yielded the following result for *Coca-Cola* stock:
+
 <p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/compare_KO.png"/>
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/ko-rwkv.png"/>
 </p>
 
-On Amazon stock:
-<p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/compare_AMZN.png"/>
-</p>
-
-On Pfizer stock:
-<p align="center">
-  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/compare_PFE.png"/>
-</p>
-
-Our results indicate that the xLSTM model outperforms the RWKV model, particularly in responding to sudden fluctuations in stock prices.
+More results can be viewed in the assets directory of this repository.
 
 ## Summary & Conclusions:
-Our xLSTM model demonstrates impressive forecasting accuracy over short time periods across various types of stocks, outperforming the transformer-based RWKV model. However, the efficiency and accuracy of predictions decline as the forecast horizon extends, with performance decreasing significantly for longer-term forecasts.
+Our xLSTM model demonstrates impressive forecasting accuracy over short time periods across various types of stock, outperforming the RWKV model.
+However, the efficiency and accuracy of predictions decline with autoregressive forecasting, with performance decreasing significantly for longer-term forecasts.
+
 
 ## Repository Organization
 | Directory | Description |
 |-----------|-------------|
-| code | Contains .ipynb files used for our model and for producing RWKV data for comparison |
+| code | Contains implementation .ipynb file used for our model |
 | data | Contains .csv files with data produced by the RWKV model |
-| assets | Contains the images displayed in `README.md` |
+| assets | Contains the images and video displayed in `README.md` and additional results images |
 
-## Sources & References:
-* RWKV model: https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main
-* xLSTMTime documentation: https://arxiv.org/abs/2405.04517
-* xLSTMTime Git: https://github.com/muslehal/xLSTMTime
 
 ## Future Work 
 Based on our results, we believe our project demonstrates promising potential in stock prediction and contributes to advancing research on LSTM-based models. However, the forecasting accuracy over longer periods remains suboptimal, highlighting areas for improvement. Future work could involve:
@@ -168,5 +185,4 @@ Based on our results, we believe our project demonstrates promising potential in
 This project is not intended to provide financial, trading, and investment advice. No warranties are made regarding the accuracy of the models. Audiences should conduct their due diligence before making any investment decisions using the methods or code presented in this repository.
 
 ## License
-
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
