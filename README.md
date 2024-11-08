@@ -127,7 +127,7 @@ The batch size, learning rate and scheduler hyperparameters were optimized with 
 
 
 ## Data Acquisition and Preprocessing
-For better comparison to similar previous projects, the model was trained and tested on the Coca-Cola, Pfizer and Amazon daily data, obtained through the ``` yfinance ``` API
+For better comparison to similar previous projects, the model was trained and tested on the Coca-Cola, Pfizer and Amazon daily data, obtained through the *Yahoo Finance* API
 Python library ```yfinance```. Data features used were: Open, High, Low, Close and Adjusted Close prices, and the daily Volume.
 Data preprocessing included applying a simple moving average with window size 10, and transforming the **prices** to their natural logarithm.
 Due to the length of the time series, we opted to assign only 64% to training, 16% to validation and the remaining 20% to testing.
