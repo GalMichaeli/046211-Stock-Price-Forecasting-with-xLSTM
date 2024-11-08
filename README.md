@@ -154,9 +154,9 @@ Our xLSTM model demonstrates impressive forecasting accuracy over short time per
 | assets | Contains the images displayed in `README.md` |
 
 ## Sources & References:
-RWKV model: https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main
-xLSTMTime documentation: https://arxiv.org/abs/2405.04517
-xLSTMTime Git: https://github.com/muslehal/xLSTMTime
+* RWKV model: https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main
+* xLSTMTime documentation: https://arxiv.org/abs/2405.04517
+* xLSTMTime Git: https://github.com/muslehal/xLSTMTime
 
 ## Future Work 
 Based on our results, we believe our project demonstrates promising potential in stock prediction and contributes to advancing research on LSTM-based models. However, the forecasting accuracy over longer periods remains suboptimal, highlighting areas for improvement. Future work could involve:
