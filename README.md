@@ -74,7 +74,7 @@ Alternatively, you can directly
 </a>
 
 To train and forecast a stock of your choice, say comapny *ExWhyZee* with ticker *XYZ*,
-run all cells in the notebook upto (exclusive) the section named "Forecasting Coca-Cola",
+run all cells in the notebook down to (exclusive) the section named "Forecasting Coca-Cola",
 then do the following.
 
 Instantiate the model:
