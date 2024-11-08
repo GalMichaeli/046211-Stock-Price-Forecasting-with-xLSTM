@@ -67,7 +67,12 @@ modifications and adaptations.
 
 
 ## Usage
-Download the notebook and run in Google Colaboratory.
+Download the notebook located in the ```code``` directory and run in Google Colaboratory.
+Alternatively, you can directly
+<a href="https://colab.research.google.com/github/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/code/xlstm-stock-price-forecasting.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 To train and forecast a stock of your choice, say comapny *ExWhyZee* with ticker *XYZ*,
 run all cells in the notebook upto (exclusive) the section named "Forecasting Coca-Cola",
 then do the following.
