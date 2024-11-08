@@ -35,6 +35,7 @@ modifications and adaptations.
 - [Data Acquisition and Preprocessing](#data-acquisition-and-preprocessing)
 - [Model Architecture](#model-architecture)
 - [Results](#results)
+- [Conclusion](#conclusion)
 - [Repository Organization](#repository-organization)
 - [Disclaimer](#disclaimer)
 - [License](#license)
@@ -152,7 +153,7 @@ resulting in non-satisfactory performance:
 https://github.com/user-attachments/assets/9b365589-fe91-4cc0-b0a4-efb39a64f50e
 
 
-## Comparison with RWKV:
+### Comparison with RWKV
 We examined our model's performance against an [RWKV](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main) model
 (considered to be superior to traditional LSTM models). The Comparison yielded the following result for *Coca-Cola* stock:
 
@@ -162,7 +163,8 @@ We examined our model's performance against an [RWKV](https://github.com/tomer90
 
 More results can be viewed in the assets directory of this repository.
 
-## Summary & Conclusions:
+
+## Conclusion
 Our xLSTM model demonstrates impressive forecasting accuracy over short time periods across various types of stock, outperforming the RWKV model.
 However, the efficiency and accuracy of predictions decline with autoregressive forecasting, with performance decreasing significantly for longer-term forecasts.
 
