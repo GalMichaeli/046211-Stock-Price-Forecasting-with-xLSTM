@@ -157,6 +157,13 @@ resulting in non-satisfactory performance:
 
 https://github.com/user-attachments/assets/9b365589-fe91-4cc0-b0a4-efb39a64f50e
 
+Furthermore, we test generalization abilty of our model by training our model on 3 independent stocks ("Apple", "Microsoft", "Walmart Inc.") and then we verified its ability to predict different stocks. Later on, we compared the output of the model that was trained on 3 stocks with the output from model that was trained on single stock that we are testing. For example "Coca-Cola" stock prediction:
+<p align="center">
+  <img src="https://github.com/GalMichaeli/046211-Stock-Price-Forecasting-with-xLSTM/blob/main/assets/ko-test.png"/>
+</p>
+
+As we can see the 
+
 
 ### Comparison with RWKV
 We examined our model's performance against an [RWKV](https://github.com/tomer9080/Stock-Prediction-Using-RWKV/tree/main) model
