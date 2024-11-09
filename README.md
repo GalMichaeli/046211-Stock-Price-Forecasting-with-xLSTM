@@ -13,7 +13,7 @@
     <a href="https://github.com/SergeyMashkin">Sergey Mashkin</a>
 </h3>
 
-<h4 align="center">Technion ECE 046211 Spring 2024 Final Project</h4>
+<h4 align="center">Deep Learning Final Project<br>Technion ECE 046211 Spring 2024</h4>
 
 
 ## Overview
